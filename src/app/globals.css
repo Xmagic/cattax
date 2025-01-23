@@ -1,0 +1,30 @@
+:root {
+  --primary-color: #1890ff;
+  --error-color: #ff4d4f;
+  --border-color: #e8e8e8;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* 移动端触摸优化 */
+@media (hover: none) {
+  * {
+    touch-action: manipulation;
+  }
+}
+
+/* 禁用双击缩放 */
+html {
+  touch-action: manipulation;
+} 

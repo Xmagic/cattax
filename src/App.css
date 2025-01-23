@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.dialog {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  cursor: move;
+  user-select: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dialog:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.resize-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #1890ff;
+  border-radius: 50%;
+  cursor: se-resize;
+}
+
+.resize-handle:hover {
+  transform: scale(1.2);
+} 

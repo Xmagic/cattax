@@ -1,0 +1,177 @@
+.layerList {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.layers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: #fafafa;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.layerItem {
+  display: flex;
+  align-items: stretch;
+  background: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  cursor: move;
+  user-select: none;
+  transition: all 0.2s;
+  overflow: visible;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  position: relative;
+  margin: 2px 0;
+}
+
+.layerPreview {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-right: 1px solid #d9d9d9;
+  font-size: 18px;
+}
+
+.layerContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  min-width: 0;
+}
+
+.layerName {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.dragHandle {
+  color: #999;
+  cursor: move;
+  font-size: 16px;
+  line-height: 1;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.layerItem:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 4px rgba(24,144,255,0.1);
+}
+
+.layerItem.selected {
+  border: 2px solid var(--primary-color);
+  background: #e6f7ff;
+}
+
+/* 拖动指示器样式 */
+.layerItem.dragOverTop {
+  margin-top: 16px;
+}
+
+.layerItem.dragOverBottom {
+  margin-bottom: 16px;
+}
+
+.layerItem.dragOverTop::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  z-index: 1;
+}
+
+.layerItem.dragOverTop::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: -9px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.layerItem.dragOverBottom::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  z-index: 1;
+}
+
+.layerItem.dragOverBottom::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  bottom: -9px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.layerItem.dragging {
+  opacity: 0.5;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 滚动条样式 */
+.layers::-webkit-scrollbar {
+  width: 6px;
+}
+
+.layers::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.layers::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .layerList {
+    margin-top: 0;
+    padding: 4px 8px;
+  }
+
+  .layers {
+    max-height: 180px;
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .layerItem {
+    margin: 1px 0;
+  }
+
+  .layerContent {
+    padding: 6px 8px;
+  }
+} 
