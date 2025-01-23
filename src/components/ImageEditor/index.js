@@ -240,6 +240,9 @@ export default function ImageEditor() {
               />
             </div>
           </div>
+          <footer className={styles.footer}>
+            Powered By <a href="https://github.com/Xmagic" target="_blank" rel="noopener noreferrer">Xmagic</a>
+          </footer>
         </div>
       )}
     </>
